@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-aop" />
+        <module name="springboot-api2doc" />
+        <module name="springboot-hibernate" />
+        <module name="springboot-mybatis" />
+        <module name="springboot-redis" />
+        <module name="springboot-shiro" />
+        <module name="springboot-swagger2" />
+        <module name="springboot-utils" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api2doc" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="springboot-aop" target="1.8" />
+      <module name="springboot-api2doc" target="1.8" />
+      <module name="springboot-hibernate" target="1.8" />
+      <module name="springboot-mybatis" target="1.8" />
+      <module name="springboot-redis" target="1.8" />
+      <module name="springboot-shiro" target="1.8" />
+      <module name="springboot-swagger2" target="1.8" />
+      <module name="springboot-utils" target="1.8" />
+      <module name="springbootbucket" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

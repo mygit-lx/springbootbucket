@@ -1,0 +1,52 @@
+##########################################################
+##################  所有profile共有的配置  #################
+##########################################################
+
+###################  项目启动端口  ###################
+server.port: 8080
+api2doc:
+  title: Api2Doc示例项目——接口文档
+  icon: https://spring.io/img/homepage/icon-spring-framework.svg
+
+api2doc:
+  enabled: false
+
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    org.springframework.web.servlet: ERROR
+
+---
+
+#####################################################################
+########################  开发环境profile  ##########################
+#####################################################################
+spring:
+  profiles: dev
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      xncoding: DEBUG
+  file: /Users/luox/Desktop/logs/app-api.log
+
+---
+
+#####################################################################
+########################  测试环境profile  ##########################
+#####################################################################
+
+spring:
+  profiles: test
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      xncoding: DEBUG
+  file: /Users/luox/Desktop/logs/app-api.log

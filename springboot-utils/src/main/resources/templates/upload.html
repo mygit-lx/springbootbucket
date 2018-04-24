@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Spring Boot file upload example</h1>
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+<br>
+<button onclick="downExcel()">测试导出Excel</button>
+<br>
+<button onclick="downExcel2()">测试导出用户Excel</button>
+</body>
+<script>
+    function downExcel() {
+        window.location.href = "http://localhost:8080/user/downExcel";
+    }
+
+    function downExcel2() {
+        window.location.href = "http://localhost:8080/user/userInfoExportExcel";
+    }
+</script>
+</html>

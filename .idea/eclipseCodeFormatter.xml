@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EclipseCodeFormatterProjectSettings">
+    <option name="selectedGlobalProfile">
+      <Settings>
+        <option name="eclipseVersion" value="ECLIPSE_44" />
+        <option name="id" value="1490335826445" />
+        <option name="importOrderConfigFilePath" value="$USER_HOME$/Desktop/xmjr/新手指南/29 新手指南/XMJR-JAVA_codetemplates.xml" />
+        <option name="importOrderFromFile" value="true" />
+        <option name="importOrdering" value="ECLIPSE_44" />
+        <option name="name" value="default" />
+        <option name="pathToConfigFileJava" value="$USER_HOME$/Desktop/xmjr/新手指南/29 新手指南/XMJR-JAVA_codetemplates.xml" />
+        <option name="useOldEclipseJavaFormatter" value="true" />
+      </Settings>
+    </option>
+  </component>
+</project>

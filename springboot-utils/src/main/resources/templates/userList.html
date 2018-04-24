@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+</head>
+<body>
+
+<h1>用户列表</h1>
+
+<table>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>国籍</th>
+        <th>性别</th>
+        <th>教育程度</th>
+        <th>手机号</th>
+        <th>电子邮箱</th>
+        <th>身份证号</th>
+        <th>婚姻状态</th>
+        <th>家庭住址</th>
+        <th>创建时间</th>
+    </tr>
+    <tr th:each="user : ${userList}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.borrowerName}"></td>
+        <td th:text="${user.nationality}"></td>
+        <td th:text="${user.sex}"></td>
+        <td th:text="${user.education}"></td>
+        <td th:text="${user.phone}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.idNo}"></td>
+        <td th:text="${user.maritalStatus}"></td>
+        <td th:text="${user.homeAdress}"></td>
+        <td th:text="${user.creatTime}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

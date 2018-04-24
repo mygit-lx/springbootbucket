@@ -1,0 +1,59 @@
+##########################################################
+##################  ����profile���е�����  #################
+##########################################################
+
+###################  ��Ŀ�����˿�  ###################
+server.port: 8080
+
+###################  spring����  ###################
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 100Mb  #�����ϴ��ļ��Ĵ�С
+
+logging:
+  level:
+    org.springframework.web.servlet: ERROR
+
+---
+
+#####################################################################
+########################  ��������profile  ##########################
+#####################################################################
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test01
+    username: root
+    password: 1234
+
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      xncoding: DEBUG
+  file: E:\log\app-utils.log
+
+---
+
+#####################################################################
+########################  ���Ի���profile  ##########################
+#####################################################################
+
+spring:
+  profiles: test
+  datasource:
+      url: jdbc:mysql://localhost:3306/test01
+      username: root
+      password: 1234
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      xncoding: DEBUG
+  file: E:\log\app-utils.log

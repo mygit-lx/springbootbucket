@@ -1,0 +1,58 @@
+##########################################################
+##################  所有profile共有的配置  #################
+##########################################################
+
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: pro
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        new_generator_mappings: false
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+---
+
+#####################################################################
+########################  开发环境profile  ##########################
+#####################################################################
+spring:
+  profiles: dev
+  datasource:
+      url: jdbc:mysql://localhost:3306/pos?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&serverTimezone=UTC
+      username: root
+      password: 1234
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      example: DEBUG
+  file: E:\log\app.log
+
+---
+
+#####################################################################
+########################  测试环境profile  ##########################
+#####################################################################
+
+spring:
+  profiles: pro
+  datasource:
+      url: jdbc:mysql://localhost:3306/pos?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&serverTimezone=UTC
+      username: root
+      password: 1234
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      example: DEBUG
+  file: E:\log\app.log
