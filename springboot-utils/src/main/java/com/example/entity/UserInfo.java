@@ -127,4 +127,21 @@ public class UserInfo {
     public void setCreatTime(Date creatTime) {
         this.creatTime = creatTime;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id=" + id +
+                ", borrowerName='" + borrowerName + '\'' +
+                ", nationality='" + nationality + '\'' +
+                ", sex=" + sex +
+                ", education=" + education +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", idno='" + idno + '\'' +
+                ", maritalStatus=" + maritalStatus +
+                ", homeAdress='" + homeAdress + '\'' +
+                ", creatTime=" + creatTime +
+                '}';
+    }
 }

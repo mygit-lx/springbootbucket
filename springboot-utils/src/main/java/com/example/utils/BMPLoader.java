@@ -5,7 +5,7 @@ import javax.imageio.ImageIO;
 
 /**
  * 比较两张图片的相似度
- * @author Guihua
+ * Created by luoxiang on 2018-4-27.
  *
  */
 public class BMPLoader {

@@ -1,8 +1,11 @@
-package com.example.utils;
+package com.example.utils.encrypt;
+import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * 对密码进行加密和验证的程序
+ * Created by luoxiang on 2018-4-27.
  */
 public class MD5Util {
 
@@ -87,6 +90,39 @@ public class MD5Util {
         int d1 = n / 16;
         int d2 = n % 16;
         return hexDigits[d1] + hexDigits[d2];
+    }
+
+    /**
+     * md5-32位大写加密
+     * @param text
+     * @return
+     */
+    public static String encode(String text){
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            md5.update((text).getBytes("UTF-8"));
+            byte b[] = md5.digest();
+
+            int i;
+            StringBuffer buf = new StringBuffer("");
+
+            for(int offset=0; offset<b.length; offset++){
+                i = b[offset];
+                if(i<0){
+                    i+=256;
+                }
+                if(i<16){
+                    buf.append("0");
+                }
+                buf.append(Integer.toHexString(i));
+            }
+            return buf.toString().toUpperCase();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "" ;
     }
 
 //    public static void main(String[] args) {
