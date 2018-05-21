@@ -2,6 +2,7 @@ package com.example.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -64,5 +65,10 @@ public class StringUtil {
     public static void main(String[] args) {
         String m= Getnum();
         System.out.println(m);
+
+
+        String str= "尊敬的{0}，你好。很高兴来到{1}，此次为您服务的是{2}，祝您旅途愉快！";
+        String format = MessageFormat.format(str, "罗祥", "巴厘岛", "刘毅向导");
+        System.out.println(format);
     }
 }
