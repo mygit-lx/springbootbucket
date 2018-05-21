@@ -127,46 +127,6 @@ public class BoLianController {
     }
 
     /**
-     * 查询车主实时订单金额
-     * @return
-     */
-    @RequestMapping(value = "/order/curr")
-    public String queryCurrOrder(){
-
-        return "";
-    }
-
-    /**
-     * 查询车主进场订单
-     * @return
-     */
-    @RequestMapping(value = "/order/car")
-    public String queryCarOrder(){
-
-        return "";
-    }
-
-    /**
-     *查询历史订单
-     * @return
-     */
-    @RequestMapping(value = "/order/all")
-    public String queryAllOrders(){
-
-        return "";
-    }
-
-    /**
-     * 预付订单通知
-     * @return
-     */
-    @RequestMapping(value = "/order/prepay")
-    public String prepayOrderNotice(){
-
-        return "";
-    }
-
-    /**
      * 获取openId
      * @param request
      * @return
