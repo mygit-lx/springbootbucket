@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import com.example.common.JsonResult;
+import com.example.common.ReturnCode;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -22,5 +24,39 @@ public class BaseController {
     public static HttpServletRequest getRequest() {
         return ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
                 .getRequest();
+    }
+
+    public static JsonResult returnSuccess() {
+        return JsonResult.createCode(ReturnCode.NOMORE);
+    }
+
+    public static JsonResult returnSuccess(Object obj, ReturnCode code) {
+        return JsonResult.createCode(code, obj);
+    }
+
+    public static JsonResult returnSuccess(Object obj, String msg) {
+        return returnSuccess(obj);
+    }
+
+
+    public static JsonResult returnSuccess(Object obj) {
+        return JsonResult.createSuccessApi(obj);
+    }
+
+    public JsonResult returnFaild(ReturnCode code) {
+        return JsonResult.createCode(code);
+    }
+
+    public JsonResult returnFaild(String key,String message){
+
+        return JsonResult.createCode(key,message);
+    }
+
+    public JsonResult returnFaild() {
+        return JsonResult.createFaildApi();
+    }
+
+    public JsonResult returnFaild(String msg) {
+        return JsonResult.createFaildApi(msg);
     }
 }
