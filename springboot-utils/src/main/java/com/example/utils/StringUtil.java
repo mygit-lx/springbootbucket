@@ -1,18 +1,20 @@
 package com.example.utils;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * 字符串转换
  * Created by luoxiang on 2018-4-27.
  */
 public class StringUtil {
+
+    private static Logger logger = LoggerFactory.getLogger(StringUtil.class);
 
     /**
      * 参数签名中按键值对中键名称的ASCII按从小到大的顺序排序
@@ -59,6 +61,19 @@ public class StringUtil {
         int x=(int)(Math.random()*900)+100;
         String serial = t + x;
         return serial;
+    }
+
+
+    /**
+     * 生成UUID字符串
+     *
+     * @return 32位的UUID密钥
+     */
+    public static String getUUID() throws Exception{
+        String uuid = UUID.randomUUID().toString();
+        uuid = uuid.substring(0, 8) + uuid.substring(9, 13) + uuid.substring(14, 18) + uuid.substring(19, 23) + uuid.substring(24);
+        logger.debug("获取32位的UUID的调试日志-->>" + uuid);
+        return uuid;
     }
 
     //主方法测试

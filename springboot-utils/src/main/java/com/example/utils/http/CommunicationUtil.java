@@ -41,13 +41,13 @@ public class CommunicationUtil {
      */
     public static JSONObject getRequestData(HttpServletRequest request) {
         String uploadData = request.getParameter("uploadData");
-        log.info("getRequestData-----uploadData:"+uploadData);
+        log.info("getRequestData-----uploadData:{}",uploadData);
         String apiSrc = request.getHeader("apiSrc");
-        log.info("getRequestData-----apiSrc:"+apiSrc);
+        log.info("getRequestData-----apiSrc:{}",apiSrc);
         String apiTarget = request.getHeader("apiTarget");
-        log.info("getRequestData-----apiTarget:"+apiTarget);
+        log.info("getRequestData-----apiTarget:{}",apiTarget);
         String version = request.getHeader("version");
-        log.info("getRequestData-----version:"+version);
+        log.info("getRequestData-----version:{}",version);
         // 判断是否有uploadData参数和header信息，如果没有，则证明不是经过我们的通讯程序发送的请求，则此时返回null
         if (isNullOrEmpty(uploadData) || isNullOrEmpty(apiSrc) || isNullOrEmpty(apiTarget)
                 || isNullOrEmpty(version)) {
@@ -58,7 +58,7 @@ public class CommunicationUtil {
             String token = requestmap.get("token");
             String data = requestmap.get("data");
             if (isNullOrEmpty(token) || isNullOrEmpty(data)) {
-                log.info("token或data为空--token:"+token+",data:"+data);
+                log.info("token或data为空--token:{}--data:{}",new String[]{token,data});
                 return null;
             }
             /*----------------进行签名校验，签名校验不通过，则返回null----------------*/
@@ -69,7 +69,7 @@ public class CommunicationUtil {
 
             /*------------------------------进行解密--------------------------------*/
             String result = EncryptUtils.decrypt3DES(data, KEY);
-            log.info("请求参数3des解密：result："+result);
+            log.info("请求参数3des解密：result：{}",result);
             // 解密出的数据为empty也返回null，这样，调用方只需判断是否为null就行，而不需要同时判断empty。
             if (result != null && result.isEmpty()) {
                 return null;
