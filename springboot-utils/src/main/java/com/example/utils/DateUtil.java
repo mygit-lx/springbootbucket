@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.example.enums.DateEnum;
+import org.apache.commons.collections.MapUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.Minutes;
@@ -104,6 +105,8 @@ public class DateUtil {
     }
 
     public static void main(String[] args) {
+        Date date = DateUtil.timeStampToDate(1528098650245l);
+        System.out.println(date);
         String date1 = "2018-06-01 12:30:00";
         String date2 = "2018-06-01 12:34:58";
         Date date3 = getDate(date1, DateEnum.DATE_FORMAT);

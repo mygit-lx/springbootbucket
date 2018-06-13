@@ -70,15 +70,14 @@ public class CommunicationUtil {
             /*------------------------------进行解密--------------------------------*/
             String result = EncryptUtils.decrypt3DES(data, KEY);
             log.info("请求参数3des解密：result：{}",result);
-            // 解密出的数据为empty也返回null，这样，调用方只需判断是否为null就行，而不需要同时判断empty。
-            if (result != null && result.isEmpty()) {
+            if ( null == result || result.isEmpty()) {
                 return null;
             }
             JSONObject jsonObject = JSONObject.parseObject(result);
 
             /*------------------------------防止接口被恶意调用-----------------------*/
             Long timeStamp = MapUtils.getLong(jsonObject, "timeStamp");
-            if (timeStamp != null || Objects.isNull(timeStamp)) {
+            if (null == timeStamp || Objects.isNull(timeStamp)) {
                 log.info("请求参数时间戳不能为空！");
                 return null;
             }
@@ -136,20 +135,24 @@ public class CommunicationUtil {
                 requestproperties.put("apiSrc", srcCode);
                 requestproperties.put("apiTarget", targetCode);
                 requestproperties.put("version", VERSION);
+                log.info("请求header信息：{}",requestproperties);
+                log.info("请求参数信息：{}",requestmap);
                 // 发送请求
                 ServiceRequest requester = new ServiceRequest();
+                System.out.println("发送请求param："+requestmap);
+                System.out.println("发送请求header："+requestproperties);
                 ServiceResponse res = requester.sendPost(url, requestmap, requestproperties);
                 if (res.code == 200) {
                     String responseContent = res.getContent();
                     return JSONObject.parseObject(responseContent);
                 } else {
-                    json.put("respcd", "999999");
+                    json.put("respcd", "9999");
                     json.put("resptx", "未知错误 responseCode:" + res.code);
                 }
 
             } catch (Exception e) {
                 log.error(e.getMessage(), e);
-                json.put("respcd", "999999");
+                json.put("respcd", "9999");
                 json.put("resptx", e.getMessage());
             }
         }
