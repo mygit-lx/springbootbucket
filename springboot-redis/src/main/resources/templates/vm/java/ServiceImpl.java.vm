@@ -8,6 +8,8 @@ import ${package}.mapper.${className}Mapper;
 import ${package}.domain.${className};
 import ${package}.service.I${className}Service;
 import com.ruoyi.common.support.Convert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ${tableComment} 服务层实现
@@ -17,6 +19,9 @@ import com.ruoyi.common.support.Convert;
  */
 @Service
 public class ${className}ServiceImpl implements I${className}Service{
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
+
 	@Autowired
 	private ${className}Mapper ${classname}Mapper;
 
