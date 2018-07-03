@@ -26,7 +26,8 @@ public class GenController extends BaseController
 
 
     /**
-     * 生成代码
+     * 单个生成代码
+     * 在浏览器中回车如下路径:http://192.168.61.130:8080/tool/gen/genCode/表名
      */
     @RequestMapping(value = "/genCode/{tableName}",method = RequestMethod.GET)
     public void genCode(HttpServletResponse response, @PathVariable("tableName") String tableName) throws IOException
@@ -42,6 +43,7 @@ public class GenController extends BaseController
 
     /**
      * 批量生成代码
+     * 在浏览器中回车如下路径:http://192.168.61.130:8080/tool/gen/batchGenCode?tables=["表名１","表名２"]
      */
     @GetMapping("/batchGenCode")
     @ResponseBody
