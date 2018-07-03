@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.OpCarMapper" >
+  <resultMap id="BaseResultMap" type="com.example.domain.OpCar" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="trade" property="trade" jdbcType="VARCHAR" />
+    <result column="order_id" property="orderId" jdbcType="VARCHAR" />
+    <result column="owner" property="owner" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="plate_license" property="plateLicense" jdbcType="VARCHAR" />
+    <result column="car_type" property="carType" jdbcType="VARCHAR" />
+    <result column="use_nature" property="useNature" jdbcType="VARCHAR" />
+    <result column="brand_model" property="brandModel" jdbcType="VARCHAR" />
+    <result column="identify_code" property="identifyCode" jdbcType="VARCHAR" />
+    <result column="engine_number" property="engineNumber" jdbcType="VARCHAR" />
+    <result column="regist_date" property="registDate" jdbcType="TIMESTAMP" />
+    <result column="certificate_date" property="certificateDate" jdbcType="TIMESTAMP" />
+    <result column="driving_license_image" property="drivingLicenseImage" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, trade, order_id, owner, address, plate_license, car_type, use_nature, brand_model, 
+    identify_code, engine_number, regist_date, certificate_date, driving_license_image, 
+    del_flag, created_time, updated_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from op_car
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from op_car
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.domain.OpCar" >
+    insert into op_car (id, trade, order_id, 
+      owner, address, plate_license, 
+      car_type, use_nature, brand_model, 
+      identify_code, engine_number, regist_date, 
+      certificate_date, driving_license_image, 
+      del_flag, created_time, updated_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{trade,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, 
+      #{owner,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{plateLicense,jdbcType=VARCHAR}, 
+      #{carType,jdbcType=VARCHAR}, #{useNature,jdbcType=VARCHAR}, #{brandModel,jdbcType=VARCHAR}, 
+      #{identifyCode,jdbcType=VARCHAR}, #{engineNumber,jdbcType=VARCHAR}, #{registDate,jdbcType=TIMESTAMP}, 
+      #{certificateDate,jdbcType=TIMESTAMP}, #{drivingLicenseImage,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=BIT}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.domain.OpCar" >
+    insert into op_car
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="trade != null" >
+        trade,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="owner != null" >
+        owner,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="plateLicense != null" >
+        plate_license,
+      </if>
+      <if test="carType != null" >
+        car_type,
+      </if>
+      <if test="useNature != null" >
+        use_nature,
+      </if>
+      <if test="brandModel != null" >
+        brand_model,
+      </if>
+      <if test="identifyCode != null" >
+        identify_code,
+      </if>
+      <if test="engineNumber != null" >
+        engine_number,
+      </if>
+      <if test="registDate != null" >
+        regist_date,
+      </if>
+      <if test="certificateDate != null" >
+        certificate_date,
+      </if>
+      <if test="drivingLicenseImage != null" >
+        driving_license_image,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="trade != null" >
+        #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="owner != null" >
+        #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="plateLicense != null" >
+        #{plateLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="carType != null" >
+        #{carType,jdbcType=VARCHAR},
+      </if>
+      <if test="useNature != null" >
+        #{useNature,jdbcType=VARCHAR},
+      </if>
+      <if test="brandModel != null" >
+        #{brandModel,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyCode != null" >
+        #{identifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNumber != null" >
+        #{engineNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="registDate != null" >
+        #{registDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certificateDate != null" >
+        #{certificateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="drivingLicenseImage != null" >
+        #{drivingLicenseImage,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.domain.OpCar" >
+    update op_car
+    <set >
+      <if test="trade != null" >
+        trade = #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="owner != null" >
+        owner = #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="plateLicense != null" >
+        plate_license = #{plateLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="carType != null" >
+        car_type = #{carType,jdbcType=VARCHAR},
+      </if>
+      <if test="useNature != null" >
+        use_nature = #{useNature,jdbcType=VARCHAR},
+      </if>
+      <if test="brandModel != null" >
+        brand_model = #{brandModel,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyCode != null" >
+        identify_code = #{identifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNumber != null" >
+        engine_number = #{engineNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="registDate != null" >
+        regist_date = #{registDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certificateDate != null" >
+        certificate_date = #{certificateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="drivingLicenseImage != null" >
+        driving_license_image = #{drivingLicenseImage,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.domain.OpCar" >
+    update op_car
+    set trade = #{trade,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR},
+      owner = #{owner,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      plate_license = #{plateLicense,jdbcType=VARCHAR},
+      car_type = #{carType,jdbcType=VARCHAR},
+      use_nature = #{useNature,jdbcType=VARCHAR},
+      brand_model = #{brandModel,jdbcType=VARCHAR},
+      identify_code = #{identifyCode,jdbcType=VARCHAR},
+      engine_number = #{engineNumber,jdbcType=VARCHAR},
+      regist_date = #{registDate,jdbcType=TIMESTAMP},
+      certificate_date = #{certificateDate,jdbcType=TIMESTAMP},
+      driving_license_image = #{drivingLicenseImage,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=BIT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      updated_time = #{updatedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

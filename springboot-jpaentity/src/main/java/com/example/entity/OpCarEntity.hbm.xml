@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.OpCarEntity" table="op_car" schema="iou">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="trade">
+            <column name="trade" sql-type="varchar(25)" length="25"/>
+        </property>
+        <property name="orderId">
+            <column name="order_id" sql-type="varchar(25)" length="25" not-null="true"/>
+        </property>
+        <property name="owner">
+            <column name="owner" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="plateLicense">
+            <column name="plate_license" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="carType">
+            <column name="car_type" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="useNature">
+            <column name="use_nature" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="brandModel">
+            <column name="brand_model" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="identifyCode">
+            <column name="identify_code" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="engineNumber">
+            <column name="engine_number" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="registDate">
+            <column name="regist_date" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="certificateDate">
+            <column name="certificate_date" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="drivingLicenseImage">
+            <column name="driving_license_image" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="delFlag">
+            <column name="del_flag" sql-type="int(1)" not-null="true"/>
+        </property>
+        <property name="createdTime">
+            <column name="created_time" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="updatedTime">
+            <column name="updated_time" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

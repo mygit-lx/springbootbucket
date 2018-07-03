@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.OpInsuranceMapper" >
+  <resultMap id="BaseResultMap" type="com.example.domain.OpInsurance" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="trade" property="trade" jdbcType="VARCHAR" />
+    <result column="order_id" property="orderId" jdbcType="VARCHAR" />
+    <result column="insure_user" property="insureUser" jdbcType="VARCHAR" />
+    <result column="insurant" property="insurant" jdbcType="VARCHAR" />
+    <result column="insure_city" property="insureCity" jdbcType="VARCHAR" />
+    <result column="out_order_status" property="outOrderStatus" jdbcType="VARCHAR" />
+    <result column="busi_order_number" property="busiOrderNumber" jdbcType="VARCHAR" />
+    <result column="busi_amount" property="busiAmount" jdbcType="DECIMAL" />
+    <result column="ctali_order_number" property="ctaliOrderNumber" jdbcType="VARCHAR" />
+    <result column="ctali_amount" property="ctaliAmount" jdbcType="DECIMAL" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, trade, order_id, insure_user, insurant, insure_city, out_order_status, busi_order_number, 
+    busi_amount, ctali_order_number, ctali_amount, del_flag, created_time, updated_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from op_insurance
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from op_insurance
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.domain.OpInsurance" >
+    insert into op_insurance (id, trade, order_id, 
+      insure_user, insurant, insure_city, 
+      out_order_status, busi_order_number, busi_amount, 
+      ctali_order_number, ctali_amount, del_flag, 
+      created_time, updated_time)
+    values (#{id,jdbcType=INTEGER}, #{trade,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, 
+      #{insureUser,jdbcType=VARCHAR}, #{insurant,jdbcType=VARCHAR}, #{insureCity,jdbcType=VARCHAR}, 
+      #{outOrderStatus,jdbcType=VARCHAR}, #{busiOrderNumber,jdbcType=VARCHAR}, #{busiAmount,jdbcType=DECIMAL}, 
+      #{ctaliOrderNumber,jdbcType=VARCHAR}, #{ctaliAmount,jdbcType=DECIMAL}, #{delFlag,jdbcType=VARCHAR}, 
+      #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.domain.OpInsurance" >
+    insert into op_insurance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="trade != null" >
+        trade,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="insureUser != null" >
+        insure_user,
+      </if>
+      <if test="insurant != null" >
+        insurant,
+      </if>
+      <if test="insureCity != null" >
+        insure_city,
+      </if>
+      <if test="outOrderStatus != null" >
+        out_order_status,
+      </if>
+      <if test="busiOrderNumber != null" >
+        busi_order_number,
+      </if>
+      <if test="busiAmount != null" >
+        busi_amount,
+      </if>
+      <if test="ctaliOrderNumber != null" >
+        ctali_order_number,
+      </if>
+      <if test="ctaliAmount != null" >
+        ctali_amount,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="trade != null" >
+        #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="insureUser != null" >
+        #{insureUser,jdbcType=VARCHAR},
+      </if>
+      <if test="insurant != null" >
+        #{insurant,jdbcType=VARCHAR},
+      </if>
+      <if test="insureCity != null" >
+        #{insureCity,jdbcType=VARCHAR},
+      </if>
+      <if test="outOrderStatus != null" >
+        #{outOrderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="busiOrderNumber != null" >
+        #{busiOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="busiAmount != null" >
+        #{busiAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="ctaliOrderNumber != null" >
+        #{ctaliOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ctaliAmount != null" >
+        #{ctaliAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.domain.OpInsurance" >
+    update op_insurance
+    <set >
+      <if test="trade != null" >
+        trade = #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="insureUser != null" >
+        insure_user = #{insureUser,jdbcType=VARCHAR},
+      </if>
+      <if test="insurant != null" >
+        insurant = #{insurant,jdbcType=VARCHAR},
+      </if>
+      <if test="insureCity != null" >
+        insure_city = #{insureCity,jdbcType=VARCHAR},
+      </if>
+      <if test="outOrderStatus != null" >
+        out_order_status = #{outOrderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="busiOrderNumber != null" >
+        busi_order_number = #{busiOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="busiAmount != null" >
+        busi_amount = #{busiAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="ctaliOrderNumber != null" >
+        ctali_order_number = #{ctaliOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ctaliAmount != null" >
+        ctali_amount = #{ctaliAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.domain.OpInsurance" >
+    update op_insurance
+    set trade = #{trade,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR},
+      insure_user = #{insureUser,jdbcType=VARCHAR},
+      insurant = #{insurant,jdbcType=VARCHAR},
+      insure_city = #{insureCity,jdbcType=VARCHAR},
+      out_order_status = #{outOrderStatus,jdbcType=VARCHAR},
+      busi_order_number = #{busiOrderNumber,jdbcType=VARCHAR},
+      busi_amount = #{busiAmount,jdbcType=DECIMAL},
+      ctali_order_number = #{ctaliOrderNumber,jdbcType=VARCHAR},
+      ctali_amount = #{ctaliAmount,jdbcType=DECIMAL},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      updated_time = #{updatedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByOrderId" parameterType="com.example.domain.OpInsurance">
+    update op_insurance
+    <set >
+      <if test="trade != null" >
+        trade = #{trade,jdbcType=VARCHAR},
+      </if>
+      <if test="insureUser != null" >
+        insure_user = #{insureUser,jdbcType=VARCHAR},
+      </if>
+      <if test="insurant != null" >
+        insurant = #{insurant,jdbcType=VARCHAR},
+      </if>
+      <if test="insureCity != null" >
+        insure_city = #{insureCity,jdbcType=VARCHAR},
+      </if>
+      <if test="outOrderStatus != null" >
+        out_order_status = #{outOrderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="busiOrderNumber != null" >
+        busi_order_number = #{busiOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="busiAmount != null" >
+        busi_amount = #{busiAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="ctaliOrderNumber != null" >
+        ctali_order_number = #{ctaliOrderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ctaliAmount != null" >
+        ctali_amount = #{ctaliAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null" >
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=VARCHAR}
+  </update>
+</mapper>

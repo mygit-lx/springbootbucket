@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-aop/springboot-aop.iml" filepath="$PROJECT_DIR$/springboot-aop/springboot-aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-api2doc/springboot-api2doc.iml" filepath="$PROJECT_DIR$/springboot-api2doc/springboot-api2doc.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-hibernate/springboot-hibernate.iml" filepath="$PROJECT_DIR$/springboot-hibernate/springboot-hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-jpaentity/springboot-jpaentity.iml" filepath="$PROJECT_DIR$/springboot-jpaentity/springboot-jpaentity.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" filepath="$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-redis/springboot-redis.iml" filepath="$PROJECT_DIR$/springboot-redis/springboot-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" filepath="$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" />

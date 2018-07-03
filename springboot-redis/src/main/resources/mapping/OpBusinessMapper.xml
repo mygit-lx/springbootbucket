@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.OpBusinessMapper" >
+  <resultMap id="BaseResultMap" type="com.example.domain.OpBusiness" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="business_id" property="businessId" jdbcType="VARCHAR" />
+    <result column="business_name" property="businessName" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="BIT" />
+    <result column="business_logo" property="businessLogo" jdbcType="VARCHAR" />
+    <result column="business_remark" property="businessRemark" jdbcType="VARCHAR" />
+    <result column="callback_addr" property="callbackAddr" jdbcType="VARCHAR" />
+    <result column="contract_one" property="contractOne" jdbcType="VARCHAR" />
+    <result column="contract_two" property="contractTwo" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="BIT" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, business_id, business_name, state, business_logo, business_remark, callback_addr, 
+    contract_one, contract_two, del_flag, created_time, updated_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from op_business
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from op_business
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.domain.OpBusiness" >
+    insert into op_business (id, business_id, business_name, 
+      state, business_logo, business_remark, 
+      callback_addr, contract_one, contract_two, 
+      del_flag, created_time, updated_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{businessId,jdbcType=VARCHAR}, #{businessName,jdbcType=VARCHAR}, 
+      #{state,jdbcType=BIT}, #{businessLogo,jdbcType=VARCHAR}, #{businessRemark,jdbcType=VARCHAR}, 
+      #{callbackAddr,jdbcType=VARCHAR}, #{contractOne,jdbcType=VARCHAR}, #{contractTwo,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=BIT}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.domain.OpBusiness" >
+    insert into op_business
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="businessId != null" >
+        business_id,
+      </if>
+      <if test="businessName != null" >
+        business_name,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="businessLogo != null" >
+        business_logo,
+      </if>
+      <if test="businessRemark != null" >
+        business_remark,
+      </if>
+      <if test="callbackAddr != null" >
+        callback_addr,
+      </if>
+      <if test="contractOne != null" >
+        contract_one,
+      </if>
+      <if test="contractTwo != null" >
+        contract_two,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="createdTime != null" >
+        created_time,
+      </if>
+      <if test="updatedTime != null" >
+        updated_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName != null" >
+        #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=BIT},
+      </if>
+      <if test="businessLogo != null" >
+        #{businessLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="businessRemark != null" >
+        #{businessRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="callbackAddr != null" >
+        #{callbackAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="contractOne != null" >
+        #{contractOne,jdbcType=VARCHAR},
+      </if>
+      <if test="contractTwo != null" >
+        #{contractTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.domain.OpBusiness" >
+    update op_business
+    <set >
+      <if test="businessId != null" >
+        business_id = #{businessId,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName != null" >
+        business_name = #{businessName,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=BIT},
+      </if>
+      <if test="businessLogo != null" >
+        business_logo = #{businessLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="businessRemark != null" >
+        business_remark = #{businessRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="callbackAddr != null" >
+        callback_addr = #{callbackAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="contractOne != null" >
+        contract_one = #{contractOne,jdbcType=VARCHAR},
+      </if>
+      <if test="contractTwo != null" >
+        contract_two = #{contractTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=BIT},
+      </if>
+      <if test="createdTime != null" >
+        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedTime != null" >
+        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.domain.OpBusiness" >
+    update op_business
+    set business_id = #{businessId,jdbcType=VARCHAR},
+      business_name = #{businessName,jdbcType=VARCHAR},
+      state = #{state,jdbcType=BIT},
+      business_logo = #{businessLogo,jdbcType=VARCHAR},
+      business_remark = #{businessRemark,jdbcType=VARCHAR},
+      callback_addr = #{callbackAddr,jdbcType=VARCHAR},
+      contract_one = #{contractOne,jdbcType=VARCHAR},
+      contract_two = #{contractTwo,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=BIT},
+      created_time = #{createdTime,jdbcType=TIMESTAMP},
+      updated_time = #{updatedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -7,13 +7,13 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/pos?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/iou?serverTimezone=UTC
     username: root
     password: 1234
 
 ###################  mybatis-plus配置  ###################
 mybatis-plus:
-  mapper-locations: classpath*:com/example/dao/mapping/*.xml
+  mapper-locations: classpath*:mapping/*.xml
   typeAliasesPackage: >
     com.example.domain
   global-config:
@@ -57,3 +57,21 @@ logging:
     com:
       xncoding: DEBUG
   file: /home/luox/Documents/log/app.log
+
+# 项目名称、版本、版权年份
+ruoyi:
+  name: luoxiang
+  version: 2.0.0
+  copyrightYear: 2018
+  profile: D:/profile/
+
+# 代码生成
+gen:
+  # 作者
+  author: luoxiang
+  # 默认生成包路径 module 需改成自己的模块名称 如 system monitor tool
+  packageName: com.ruoyi.project.module
+  # 自动去除表前缀，默认是true
+  autoRemovePre: false
+  # 表前缀(类名不会包含表前缀)
+  tablePrefix: sys_

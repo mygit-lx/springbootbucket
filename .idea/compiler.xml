@@ -9,6 +9,7 @@
         <module name="springboot-aop" />
         <module name="springboot-api2doc" />
         <module name="springboot-hibernate" />
+        <module name="springboot-jpaentity" />
         <module name="springboot-mybatis" />
         <module name="springboot-redis" />
         <module name="springboot-shiro" />
@@ -22,6 +23,7 @@
       <module name="springboot-aop" target="1.8" />
       <module name="springboot-api2doc" target="1.8" />
       <module name="springboot-hibernate" target="1.8" />
+      <module name="springboot-jpaentity" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
       <module name="springboot-redis" target="1.8" />
       <module name="springboot-shiro" target="1.8" />
