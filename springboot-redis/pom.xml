@@ -157,6 +157,13 @@
 			<version>${shiro.version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/net.oschina.likaixuan/excelutil -->
+		<dependency>
+			<groupId>net.oschina.likaixuan</groupId>
+			<artifactId>excelutil</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
     </dependencies>
 
 	<build>
