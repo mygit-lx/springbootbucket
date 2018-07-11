@@ -20,10 +20,10 @@ import java.util.List;
 public class GenUtils
 {
     /** 项目空间路径 */
-    private static final String projectPath = "main/java/com/ruoyi/project";
+    private static final String projectPath = "main/java/com/demo/test";
 
     /** mybatis空间路径 */
-    private static final String myBatisPath = "main/resources/mybatis";
+    private static final String myBatisPath = "main/resources/mapping";
 
     /** html空间路径 */
     private static final String templatesPath = "main/resources/templates";
@@ -85,7 +85,7 @@ public class GenUtils
         templates.add("templates/vm/java/domain.java.vm");
         templates.add("templates/vm/java/Mapper.java.vm");
         templates.add("templates/vm/java/Service.java.vm");
-        templates.add("templates/vm/java/ServiceImpl.java.vm");
+//        templates.add("templates/vm/java/ServiceImpl.java.vm");
 //        templates.add("templates/vm/java/Controller.java.vm");
         templates.add("templates/vm/xml/Mapper.xml.vm");
 //        templates.add("templates/vm/html/list.html.vm");
