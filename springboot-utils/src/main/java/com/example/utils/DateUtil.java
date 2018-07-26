@@ -78,7 +78,7 @@ public class DateUtil {
     }
 
     /**
-     * 返回传入两个date相差的天数
+     * 返回传入两个date相差的分钟数
      * END 大于 start 忽略时分秒
      * 例：start = 2015-06-05 10:40:30
      * end = 2015-06-06 10:40:20
@@ -104,15 +104,27 @@ public class DateUtil {
         return between/60;
     }
 
+    /**
+     * 计算两个Date之间相差多少秒
+     * @param begin
+     * @param end
+     * @return
+     */
+    public static long secondBetween(Date begin,Date end){
+        return (end.getTime()-begin.getTime())/1000;//除以1000是为了转换成秒
+    }
+
     public static void main(String[] args) {
-        Date date = DateUtil.timeStampToDate(1528098650245l);
-        System.out.println(date);
-        String date1 = "2018-06-01 12:30:00";
-        String date2 = "2018-06-01 12:34:58";
-        Date date3 = getDate(date1, DateEnum.DATE_FORMAT);
-        Date date4 = getDate(date2, DateEnum.DATE_FORMAT);
-//        int i = minuteBetween(getDate(date1, DateEnum.DATE_FORMAT), getDate(date2, DateEnum.DATE_FORMAT));
-        long i = minutesBetween(date3, date4);
-        System.out.println(i);
+//        Date date = DateUtil.timeStampToDate(1528098650245l);
+//        System.out.println(date);
+//        String date1 = "2018-06-01 12:30:00";
+//        String date2 = "2018-06-01 12:34:58";
+//        Date date3 = getDate(date1, DateEnum.DATE_FORMAT);
+//        Date date4 = getDate(date2, DateEnum.DATE_FORMAT);
+////        int i = minuteBetween(getDate(date1, DateEnum.DATE_FORMAT), getDate(date2, DateEnum.DATE_FORMAT));
+//        long i = minutesBetween(date3, date4);
+//        System.out.println(i);
+
+        secondBetween(DateUtil.getDate("2018-07-24 10:10:10",DateEnum.DATE_FORMAT),DateUtil.getDate("2018-07-24 10:10:10",DateEnum.DATE_FORMAT));
     }
 }
