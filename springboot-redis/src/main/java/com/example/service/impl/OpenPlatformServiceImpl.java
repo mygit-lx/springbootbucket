@@ -47,6 +47,8 @@ public class OpenPlatformServiceImpl implements OpenPlatformService{
         return opUserMapper.selectByPrimaryKey(id);
     }
 
+    private static HashMap<String,Integer> groupVariable=new HashMap<String,Integer>();
+
     @Transactional
     @Override
     public JSONObject insertOrderData(JSONObject requestData,JSONObject result) throws Exception{
@@ -306,4 +308,5 @@ public class OpenPlatformServiceImpl implements OpenPlatformService{
             }
         }
     }
+
 }

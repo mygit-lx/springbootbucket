@@ -18,4 +18,5 @@ public interface OpenPlatformService {
     JSONObject noticeOutOrderData(JSONObject requestData, JSONObject result) throws Exception;
 
     JSONObject queryTradeInfo(JSONObject requestData, JSONObject result) throws Exception;
+
 }

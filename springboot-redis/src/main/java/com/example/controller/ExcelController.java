@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.domain.City;
 import com.example.domain.User;
 import com.lkx.util.ExcelUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,12 @@ public class ExcelController {
      */
     @RequestMapping(value = "/read/local")
     public void readExcel(HttpServletRequest request) throws Exception{
-        String keyValue ="编号:id,用户名:username,密码:password";
-        List<User> list=ExcelUtil.readXls("/home/luox/Documents/test01.xls",ExcelUtil.getMap(keyValue),"com.example.domain.User");
-        System.out.println(JSONObject.toJSON(list));
+        String keyValue ="西安:name,新疆:two,阿克苏:three";
+        List<City> list=ExcelUtil.readXls("/home/luox/Documents/test02.xls",ExcelUtil.getMap(keyValue),"com.example.domain.City");
+
+        for (City city : list) {
+            System.out.println("<li><em>"+city.getName()+"</em><em>"+ city.getTwo()+"</em><em>"+city.getThree()+"</em></li>");
+        }
     }
 
     /**
