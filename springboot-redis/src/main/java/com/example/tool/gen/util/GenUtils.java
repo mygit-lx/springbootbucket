@@ -87,11 +87,11 @@ public class GenUtils
         templates.add("templates/vm/java/Service.java.vm");
 //        templates.add("templates/vm/java/ServiceImpl.java.vm");
 //        templates.add("templates/vm/java/Controller.java.vm");
-        templates.add("templates/vm/xml/Mapper.xml.vm");
+//        templates.add("templates/vm/xml/Mapper.xml.vm");
 //        templates.add("templates/vm/html/list.html.vm");
 //        templates.add("templates/vm/html/add.html.vm");
 //        templates.add("templates/vm/html/edit.html.vm");
-        templates.add("templates/vm/sql/sql.vm");
+//        templates.add("templates/vm/sql/sql.vm");
         return templates;
     }
 
