@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.common.result.JsonResult;
 import com.example.domain.OpUser;
 import com.example.service.OpenPlatformService;
+import com.example.util.StringUtil;
 import com.example.util.http.CommunicationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,10 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 开放平台API
@@ -35,9 +33,28 @@ public class OpenPlatformController extends BaseController{
      * @param id
      */
     @RequestMapping(value = "/getById/{id}")
-    public void getOpUser(@PathVariable Integer id){
+    public JsonResult getOpUser(@PathVariable Integer id){
         OpUser allOpUser = openPlatformService.findAllOpUser(id);
-        System.out.println(allOpUser.toString());
+        return returnSuccess(allOpUser);
+    }
+
+    /**
+     * 测试接口
+     */
+    @RequestMapping(value = "/getUserById")
+    public JsonResult findOpUser(){
+        OpUser user = new OpUser();
+        user.setId(1);
+        user.setTrade(StringUtil.Getnum());
+        user.setOrderId(StringUtil.Getnum());
+        user.setName("罗祥");
+        user.setMobile("18888888888");
+        user.setIdNo(null);
+        user.setIdNoImage(null);
+        user.setDelFlag(false);
+        user.setCreatedTime(new Date());
+        user.setUpdatedTime(null);
+        return returnSuccess(user);
     }
 
     /**

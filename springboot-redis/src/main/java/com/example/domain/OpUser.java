@@ -1,7 +1,12 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Date;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpUser {
     private Integer id;
 
@@ -11,6 +16,7 @@ public class OpUser {
 
     private String name;
 
+    @JsonIgnore
     private String mobile;
 
     private String idNo;
@@ -19,6 +25,7 @@ public class OpUser {
 
     private Boolean delFlag;
 
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss",locale = "zh",timezone = "GMT+8")
     private Date createdTime;
 
     private Date updatedTime;
