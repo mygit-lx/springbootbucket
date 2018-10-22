@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-redis/springboot-redis.iml" filepath="$PROJECT_DIR$/springboot-redis/springboot-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" filepath="$PROJECT_DIR$/springboot-shiro/springboot-shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-swagger2/springboot-swagger2.iml" filepath="$PROJECT_DIR$/springboot-swagger2/springboot-swagger2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-thread/springboot-thread.iml" filepath="$PROJECT_DIR$/springboot-thread/springboot-thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-utils/springboot-utils.iml" filepath="$PROJECT_DIR$/springboot-utils/springboot-utils.iml" />
     </modules>
   </component>

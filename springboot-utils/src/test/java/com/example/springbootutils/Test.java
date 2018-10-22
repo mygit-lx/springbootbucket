@@ -73,6 +73,8 @@ public class Test {
     public void test01(){
         Optional<User> user = Optional.ofNullable(getUser());
 
+        System.out.println(user.isPresent());
+
         Optional<String> mobilePhone =
                 user.flatMap((u) -> Optional.ofNullable(u.getMobilePhone()))
                         .filter(s->!s.isEmpty());
@@ -89,7 +91,7 @@ public class Test {
     private User getUser(){
         User user = new User();
         user.setMobilePhone("");
-        user.setPhone("");
+        user.setPhone("1111");
         return user;
     }
 }
