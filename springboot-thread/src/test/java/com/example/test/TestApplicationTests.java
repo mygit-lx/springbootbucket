@@ -1,7 +1,6 @@
 package com.example.test;
 
 import com.example.test.config.properties.TestProperty;
-import com.example.test.demo.ticket.Station;
 import com.example.test.service.PropertyService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

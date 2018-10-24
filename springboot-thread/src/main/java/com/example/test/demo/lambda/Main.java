@@ -60,6 +60,7 @@ public class Main {
     @Test
     public void test03(){
         Map<String,Object> map = new HashMap<>();
-        System.out.println(1<<30);
+        //System.out.println(1<<30);
+        String str = "";
     }
 }
