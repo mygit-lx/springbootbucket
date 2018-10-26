@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api2doc" />
         <module name="springboot-aop" />
         <module name="springboot-api2doc" />
         <module name="springboot-hibernate" />
@@ -14,6 +15,7 @@
         <module name="springboot-redis" />
         <module name="springboot-shiro" />
         <module name="springboot-swagger2" />
+        <module name="springboot-thread" />
         <module name="springboot-utils" />
       </profile>
     </annotationProcessing>
@@ -28,6 +30,7 @@
       <module name="springboot-redis" target="1.8" />
       <module name="springboot-shiro" target="1.8" />
       <module name="springboot-swagger2" target="1.8" />
+      <module name="springboot-thread" target="1.8" />
       <module name="springboot-utils" target="1.8" />
       <module name="springbootbucket" target="1.8" />
     </bytecodeTargetLevel>

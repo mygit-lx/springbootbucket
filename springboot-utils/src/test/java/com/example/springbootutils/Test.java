@@ -2,12 +2,14 @@ package com.example.springbootutils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.entity.User;
 import com.example.utils.DateUtil;
 import com.example.utils.StringUtil;
 import com.example.utils.http.CommunicationUtil;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * 测试类
@@ -65,5 +67,31 @@ public class Test {
         JSONObject jsonObject = CommunicationUtil.sendPost(url, s, "za", "czbt");
         System.out.println(jsonObject);
         System.out.println("查询交易信息结束");
+    }
+
+    @org.junit.Test
+    public void test01(){
+        Optional<User> user = Optional.ofNullable(getUser());
+
+        System.out.println(user.isPresent());
+
+        Optional<String> mobilePhone =
+                user.flatMap((u) -> Optional.ofNullable(u.getMobilePhone()))
+                        .filter(s->!s.isEmpty());
+
+        Optional<String> phone =
+                user.flatMap((u) -> Optional.ofNullable(u.getPhone()))
+                        .filter(s->!s.isEmpty());
+
+        String s = mobilePhone.orElse(phone.orElse("000000"));
+
+        System.out.println(s);
+    }
+
+    private User getUser(){
+        User user = new User();
+        user.setMobilePhone("");
+        user.setPhone("1111");
+        return user;
     }
 }

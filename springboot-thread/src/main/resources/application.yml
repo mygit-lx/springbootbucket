@@ -1,0 +1,20 @@
+app:
+  name: "lianmengtu"
+  country: "China"
+  username: "melon"
+  password: "melon123"
+
+test:
+  name: "lianmengtu"
+  enabled: false
+  security:
+    username: "jacob"
+    password: "jacob123"
+    roles:
+      - USER
+      - ADMIN
+    work:
+      "[/position]": "CEO"
+      "[/company]": "bat"
+      /address: "BeiJing"
+
